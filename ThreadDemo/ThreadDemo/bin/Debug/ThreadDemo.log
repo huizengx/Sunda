@@ -1,0 +1,66 @@
+﻿--Prepare task--12:04:27:35:097
+task:2953,thread:9
+fry egg 0
+fry egg 1
+task:2957,thread:10
+fry Bacon 0
+fry Bacon 1
+fry Bacon 2
+task:2962,thread:12
+fry ToastBread 0
+fry ToastBread 1
+fry ToastBread 2
+fry ToastBread 3
+fry ToastBread 4
+fry ToastBread 5
+--Start task-- 12:04:27:35:113
+===>fry bacon ready 
+===>fry egg ready 
+Apply Butter to toastbread
+Apply Jam to toastbread
+===>fry toastbread ready 
+--End task--12:04:27:35:115
+--Prepare task--12:04:29:11:771
+--Start task-- 12:04:29:11:773
+task:18801,thread:12
+fry egg 0
+fry egg 1
+task:18803,thread:9
+fry Bacon 0
+fry Bacon 1
+fry Bacon 2
+===>fry egg ready 
+===>fry bacon ready 
+task:18804,thread:12
+fry ToastBread 0
+fry ToastBread 1
+fry ToastBread 2
+fry ToastBread 3
+fry ToastBread 4
+fry ToastBread 5
+Apply Butter to toastbread
+Apply Jam to toastbread
+===>fry toastbread ready 
+--End task--12:04:29:11:776
+--Prepare task--12:04:31:01:476
+task:933,thread:9
+task:935,thread:10
+fry Bacon 0
+fry Bacon 1
+fry Bacon 2
+task:939,thread:11
+fry ToastBread 0
+fry ToastBread 1
+fry ToastBread 2
+fry ToastBread 3
+fry ToastBread 4
+fry ToastBread 5
+--Start task-- 12:04:31:01:489
+===>fry bacon ready 
+Apply Butter to toastbread
+Apply Jam to toastbread
+===>fry toastbread ready 
+fry egg 0
+fry egg 1
+===>fry egg ready 
+--End task--12:04:31:03:487

@@ -1,0 +1,14 @@
+C:\Users\2019WW11\source\repos\ThreadDemo\StClient\bin\Debug\StClient.exe.config
+C:\Users\2019WW11\source\repos\ThreadDemo\StClient\bin\Debug\StClient.exe
+C:\Users\2019WW11\source\repos\ThreadDemo\StClient\bin\Debug\StClient.pdb
+C:\Users\2019WW11\source\repos\ThreadDemo\StClient\obj\Debug\StClient.csprojAssemblyReference.cache
+C:\Users\2019WW11\source\repos\ThreadDemo\StClient\obj\Debug\MainWindow.g.cs
+C:\Users\2019WW11\source\repos\ThreadDemo\StClient\obj\Debug\App.g.cs
+C:\Users\2019WW11\source\repos\ThreadDemo\StClient\obj\Debug\StClient_MarkupCompile.cache
+C:\Users\2019WW11\source\repos\ThreadDemo\StClient\obj\Debug\StClient_MarkupCompile.lref
+C:\Users\2019WW11\source\repos\ThreadDemo\StClient\obj\Debug\MainWindow.baml
+C:\Users\2019WW11\source\repos\ThreadDemo\StClient\obj\Debug\StClient.g.resources
+C:\Users\2019WW11\source\repos\ThreadDemo\StClient\obj\Debug\StClient.Properties.Resources.resources
+C:\Users\2019WW11\source\repos\ThreadDemo\StClient\obj\Debug\StClient.csproj.GenerateResource.cache
+C:\Users\2019WW11\source\repos\ThreadDemo\StClient\obj\Debug\StClient.exe
+C:\Users\2019WW11\source\repos\ThreadDemo\StClient\obj\Debug\StClient.pdb
