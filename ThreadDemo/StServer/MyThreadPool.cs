@@ -15,6 +15,19 @@ namespace StServer
         ConcurrentQueue<ActionTask> TaskContainer = null;
         public MyThreadPool(int number)
         {
+            CreateThread(number);
+        }
+
+        public void Start(int number)
+        {
+            if (!IsThreadPoolEnable)
+            {
+                CreateThread(number);
+            }
+        }
+
+        private void CreateThread(int number)
+        {
             IsThreadPoolEnable = true;
             ThreadContainer = new List<Thread>();
             TaskContainer = new ConcurrentQueue<ActionTask>();

@@ -22,15 +22,25 @@ namespace StClient
     {
         //发送数据索引
         int i = 1;
+        string ip = string.Empty;
         public MainWindow()
         {
             InitializeComponent();
+            ip = TxbIpAdd.Text.Trim();
+            Request.OnReceiveData += Request_OnReceiveData;
         }
 
         private void Btnconnect_Click(object sender, RoutedEventArgs e)
         {
-            Request.Connect();
-            Request.OnReceiveData += Request_OnReceiveData;
+            if (!string.IsNullOrEmpty(ip))
+            {
+                Request.Connect(ip);
+            }
+        }
+
+        private void BtnDisconnect_Click(object sender, RoutedEventArgs e)
+        {
+            Request.Disconnect();
         }
 
         private void Request_OnReceiveData(object message)
@@ -41,7 +51,10 @@ namespace StClient
             {
                 ret += item + ",";
             }
-            Console.WriteLine(i+"=====Client Get:" + ret);
+
+            this.Dispatcher.Invoke(() => {
+                listboxMsg.Items.Add(i + "==Client Get:" + ret);
+            });
             i++;
         }
 
@@ -61,10 +74,12 @@ namespace StClient
 
         private Task SendAsync(byte[] arry)
         {
+            int larstindex = arry.Length - 1;
             var t = Task.Run(() =>
             {
                 for (int i = 0; i < 200; i++)
                 {
+                    arry[larstindex] = (byte)i;
                     Request.Send(arry);
                     System.Threading.Thread.Sleep(10);
                 }

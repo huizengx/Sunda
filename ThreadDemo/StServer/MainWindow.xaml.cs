@@ -32,8 +32,7 @@ namespace StServer
         {
             m_socket = new SocketManager(200, 1024);
             m_socket.Init();
-            m_socket.Start(new IPEndPoint(IPAddress.Any, 13909));
-            
+            //m_socket.Start(new IPEndPoint(IPAddress.Any, 13909));
             m_socket.ReceiveClientData += SocketManager_ReceiveClientData;
             m_socket.ClientNumberChange += M_socket_ClientNumberChange;
             JobPool = new MyThreadPool(8);
@@ -105,8 +104,15 @@ namespace StServer
 
         private void bntCancel_Click(object sender, RoutedEventArgs e)
         {
-            //m_socket.Stop();
+            m_socket.Stop();
             JobPool.FinalPool();
         }
+
+        private void bntStart_Click(object sender, RoutedEventArgs e)
+        {
+            JobPool.Start(8);
+            m_socket.Start(new IPEndPoint(IPAddress.Any, 13909));
+        }
+        
     }
 }

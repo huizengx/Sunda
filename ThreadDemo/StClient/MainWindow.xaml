@@ -17,15 +17,18 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel>
-            <Button x:Name="Btnconnect" Click="Btnconnect_Click">connect</Button>
-            <!--<Button x:Name="TaskBtn" Click="TaskBtn_Click">Task</Button>
-            <Button x:Name="Async_AwaitBtn" Click="Async_AwaitBtn_Click">Async_Await</Button>
-            <Button x:Name="Thread_contend" Click="Thread_contend_Click">Thread_contend</Button>
-            <Button x:Name="DeadLock" Click="DeadLock_Click">DeadLock</Button>-->
+            <TextBox x:Name="TxbIpAdd">127.0.0.1</TextBox>
+            <Button x:Name="Btnconnect" Click="Btnconnect_Click">Connect</Button>
+            <Button x:Name="BtnDisconnect" Click="BtnDisconnect_Click">Disconnect</Button>
         </StackPanel>
         <StackPanel Grid.Column="1">
             <Button x:Name="ClearLogBtn" Click="ClearLogBtn_Click">Send</Button>
         </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <ListBox x:Name="listboxMsg" Height="180"></ListBox>
+        </StackPanel>
+
 
     </Grid>
 </Window>

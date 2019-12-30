@@ -75,6 +75,28 @@ namespace StClient
             return error;
         }
 
+        public static SocketError Connect(string ip)
+        {
+            if (Connected) return SocketError.Success;
+            //我这里是读取配置,   
+            //string ip = Config.ReadConfigString("socket", "server", "");
+            //int port = Config.ReadConfigInt("socket", "port", 13909);
+            int port = 13909;
+
+            if (string.IsNullOrWhiteSpace(ip) || port <= 1000) return SocketError.Fault;
+
+            //创建连接对象, 连接到服务器  
+            smanager = new SocketManager(ip, port);
+            SocketError error = smanager.Connect();
+            if (error == SocketError.Success)
+            {
+                //连接成功后,就注册事件. 最好在成功后再注册.  
+                smanager.ServerDataHandler += OnReceivedServerData;
+                smanager.ServerStopEvent += OnServerStopEvent;
+            }
+            return error;
+        }
+
         /// <summary>  
         /// 断开连接  
         /// </summary>  

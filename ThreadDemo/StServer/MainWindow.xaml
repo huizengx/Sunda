@@ -26,7 +26,8 @@
             <ListBox x:Name="listBoxMsg" Height="180"></ListBox>
         </StackPanel>
         <StackPanel Grid.Row="1">
-            <Button x:Name="bntCancel" Click="bntCancel_Click">CancelJob</Button>
+            <Button x:Name="bntCancel" Click="bntCancel_Click">Stop Server_CancelJob</Button>
+            <Button x:Name="bntStart" Click="bntStart_Click">Start Server</Button>
         </StackPanel>
         
     </Grid>
