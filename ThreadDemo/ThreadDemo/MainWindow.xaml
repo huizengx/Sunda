@@ -24,7 +24,7 @@
             <Button x:Name="DeadLock" Click="DeadLock_Click">DeadLock</Button>
         </StackPanel>
         <StackPanel Grid.Column="1">
-            <Button x:Name="ClearLogBtn" Click="ClearLogBtn_Click"></Button>
+            <Button x:Name="ClearLogBtn" Click="ClearLogBtn_Click">Clear</Button>
         </StackPanel>
         
     </Grid>
