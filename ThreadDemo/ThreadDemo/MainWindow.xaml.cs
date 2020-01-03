@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,16 @@ namespace ThreadDemo
             ttest = new TaskTest();
         }
 
+        #region //隐藏当前窗口，保留进程
+        //(护眼程序,保留进程)
+        //酷狗，最小化到托盘
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
+        #endregion
+
         private void ParallelBtn_Click(object sender, RoutedEventArgs e)
         {
             par.TestFor();
@@ -48,6 +59,8 @@ namespace ThreadDemo
         {
             ttest.MakeBreadfastAsync();
         }
+
+        #region 检索目录及子目录中的指定文件
 
         private void ClearLogBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -75,9 +88,8 @@ namespace ThreadDemo
                     FindAppFile(item);
                 }
             }
-            
         }
-
+        #endregion
 
         private void Thread_contend_Click(object sender, RoutedEventArgs e)
         {

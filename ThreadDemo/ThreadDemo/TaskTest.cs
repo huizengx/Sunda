@@ -43,6 +43,7 @@ namespace ThreadDemo
         //比如：可以创建日志记录任务。侦听任务等。
         public void TakeLongRuning()
         {
+            //LongRunning,执行线程不是后台线程。
             var t1 = new Task(TaskMethod, "long running",TaskCreationOptions.LongRunning);
             t1.Start();
         }
@@ -107,11 +108,11 @@ namespace ThreadDemo
             var fryeggtask = FryEggAsync(2);
             var frybacontask = FryBacon(3);
             var frytoastbreadtask = MakeToastBreadWithButterJamAsync(6);
-            var allTasks = new List<Task> { frybacontask, fryeggtask, frytoastbreadtask };
+            var allTasks = new List<Task> { frybacontask, fryeggtask, frytoastbreadtask };//创建人物集合
             Logger.WriteLog($"--Start task-- {DateTime.Now.ToString("MM:hh:mm:ss:fff")}");
             while (allTasks.Any())
             {
-                Task finished = await Task.WhenAny(allTasks);
+                Task finished = await Task.WhenAny(allTasks);//
                 if (finished == fryeggtask)
                 {
                     Logger.WriteLog($"===>fry egg ready ");
@@ -139,7 +140,7 @@ namespace ThreadDemo
             Task<string> ttoast = ToastBread(5);
 
             Logger.WriteLog($"--Start task--");
-            //启动所有任务
+            //启动所有任务，逐个人物执行，属于同步
             int agg = await tegg;
             Logger.WriteLog($"===>fry egg ready {agg}");
             string bacon = await tbacon;
