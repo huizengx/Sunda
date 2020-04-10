@@ -67,7 +67,7 @@ namespace ThreadDemo
             FindAppFile($@"C:\Program Files (x86)");//
         }
 
-        //检索目录及子目录中的指定文件
+        //检索目录及子目录中的指定文件，参数不能是静态字段。
         private void FindAppFile(string path)
         {
             if (System.IO.Directory.Exists(path))
@@ -93,12 +93,15 @@ namespace ThreadDemo
 
         private void Thread_contend_Click(object sender, RoutedEventArgs e)
         {
+            //资源竞争
             ThreadSynchroniz.RaceConditions();
+            MessageBox.Show("RaceConditions");
         }
 
         private void DeadLock_Click(object sender, RoutedEventArgs e)
         {
             ThreadSynchroniz.DeadLock();
+            MessageBox.Show("DeadLock");
         }
 
         

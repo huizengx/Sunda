@@ -1,0 +1,20 @@
+#Ignore Visual Studio temporary files, build results
+#Files generates by popular visual studio add-ons.
+
+#Users-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+#build results
+[Db]ebug/
+[Db]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+[Xx]64/
+[Xx]86/
+[Bb]uild/
+bld/
+[Bb]in/
+[Oo]bj/
