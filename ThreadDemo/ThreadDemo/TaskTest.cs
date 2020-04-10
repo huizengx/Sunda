@@ -102,13 +102,15 @@ namespace ThreadDemo
             return ret;
         }
 
+        //异步执行任务，不会阻塞
         public async void MakeBreadfastAsync()
         {
             Logger.WriteLog($"--Prepare task--{DateTime.Now.ToString("MM:hh:mm:ss:fff")}");
             var fryeggtask = FryEggAsync(2);
             var frybacontask = FryBacon(3);
             var frytoastbreadtask = MakeToastBreadWithButterJamAsync(6);
-            var allTasks = new List<Task> { frybacontask, fryeggtask, frytoastbreadtask };//创建人物集合
+            //创建任务集合
+            var allTasks = new List<Task> { frybacontask, fryeggtask, frytoastbreadtask };
             Logger.WriteLog($"--Start task-- {DateTime.Now.ToString("MM:hh:mm:ss:fff")}");
             while (allTasks.Any())
             {
@@ -140,7 +142,7 @@ namespace ThreadDemo
             Task<string> ttoast = ToastBread(5);
 
             Logger.WriteLog($"--Start task--");
-            //启动所有任务，逐个人物执行，属于同步
+            //启动所有任务，逐个任务执行，属于同步
             int agg = await tegg;
             Logger.WriteLog($"===>fry egg ready {agg}");
             string bacon = await tbacon;
