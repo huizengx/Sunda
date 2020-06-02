@@ -38,6 +38,9 @@ namespace ThreadDemo
             this.Hide();
             e.Cancel = true;
         }
+        //WPF，Click触发顺序 MouseDown-->Click-->MouseUp
+        //当控件中没有Click事件，使用MouseLeftButtonDown和MouseLeftButtonUp 代替都是有缺陷的。
+        //可以使用修改Button的Style方法
         #endregion
 
         private void ParallelBtn_Click(object sender, RoutedEventArgs e)
